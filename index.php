@@ -12,7 +12,7 @@
 
     <?php include 'homepage_apidata.php';?>
     </head>
-  <body>
+  <body style="margin-top:7%;max-width:100%;">
 
     <div class="container">
       <div class="row">
@@ -45,12 +45,12 @@
     <br/><br/>
       <select id="country" name="country" class="form-control">
         <option value="none" selected disabled hidden>
-            Select an Option</option>
+            Select your Country</option>
         <?php include 'dropdown_country.php'; ?>
       </select>
       <br/><br/>
       <table class="table" id="tbl">
-        
+
       </table>
 
     <script src="function.js" type="text/javascript"></script>
