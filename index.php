@@ -11,10 +11,11 @@
     <title>Covid19 World</title>
     </head>
   <body>
+
     <div class="container">
       <div class="row">
         <div class ="col-12 col-sm-4 text-center">
-          <span id="confirmed">
+          <h3 id="confirmed">
             <?php
               $stream_opts = [
                   "ssl" => [
@@ -29,27 +30,28 @@
               echo $data1["confirmed"]["value"];
 
             ?>
-          </span><br/>
-          <h4>Confirmed</h4>
+          </h3><br/>
+          <span>Confirmed</span>
         </div>
         <div class ="col-12 col-sm-4 text-center">
-          <span id="recovered">
+          <h3 id="recovered">
             <?php
               echo $data1["recovered"]["value"];
              ?>
-          </span><br/>
-          <h4>Recovered</h4>
+          </h3><br/>
+          <span>Recovered</span>
         </div>
         <div class ="col-12 col-sm-4 text-center">
-          <span id="deaths">
+          <h3 id="deaths">
             <?php
               echo $data1["deaths"]["value"];
              ?>
-          </span><br/>
-          <h4>Deaths</h4>
+          </h3><br/>
+          <span>Deceased</span>
         </div>
       </div>
     </div>
+    <br/><br/>
       <select id="country" name="country" class="form-control">
         <option value="none" selected disabled hidden>
             Select an Option</option>
@@ -78,7 +80,20 @@
             }
           ?>
       </select>
+      <br/><br/>
+      <table class="table" id="tbl">
+        <thead>
+          <tr>
+            <th>States</th>
+            <th>Confirmed</th>
+            <th>Recovered</th>
+            <th>Active</th>
+            <th>Deceased</th>
+          </tr>
+        </thead>
+      </table>
       <script type="text/javascript">
+
         $( "select" ) .change(function () {
           $country_name=document.getElementById('country').value;
           $link ="https://covid19.mathdro.id/api/countries/"+$country_name;
@@ -88,11 +103,32 @@
             document.getElementById('recovered').innerHTML=data['recovered']['value'];
             document.getElementById('deaths').innerHTML=data['deaths']['value'];
 
+
+          });
+          $.getJSON($link+"/confirmed",function(data_confirmed){
+             $("#tbl").find("tr:gt(0)").remove();
+
+            for(var i=0;i<data_confirmed.length;i++){
+              var state=data_confirmed[i]['provinceState'];
+              if(state==null){
+                var state="";
+              }
+              var conf=data_confirmed[i]['confirmed'];
+              var recov=data_confirmed[i]['recovered'];
+              var deaths=data_confirmed[i]['deaths'];
+              var active=conf-recov-deaths;
+              $('#tbl').append('<tr><td>'+state+'</td><td>'+conf+'</td><td>'+recov+'</td><td>'+active+'</td><td>'+deaths+'</td></tr>');
+
+
+            }
           });
 
         });
 
         </script>
+        <?php
+
+         ?>
 
 
 
