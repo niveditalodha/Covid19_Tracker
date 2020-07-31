@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <title>Covid19 World</title>
+
+    <?php include 'homepage_apidata.php';?>
     </head>
   <body>
 
@@ -17,18 +19,7 @@
         <div class ="col-12 col-sm-4 text-center">
           <h3 id="confirmed">
             <?php
-              $stream_opts = [
-                  "ssl" => [
-                      "verify_peer"=>false,
-                      "verify_peer_name"=>false,
-                  ]
-              ];
-              $response = file_get_contents("https://covid19.mathdro.id/api/",
-                             false, stream_context_create($stream_opts));
-
-              $data1 = json_decode($response, true);
               echo $data1["confirmed"]["value"];
-
             ?>
           </h3><br/>
           <span>Confirmed</span>
@@ -55,82 +46,13 @@
       <select id="country" name="country" class="form-control">
         <option value="none" selected disabled hidden>
             Select an Option</option>
-        <?php
-          $stream_opts = [
-              "ssl" => [
-                  "verify_peer"=>false,
-                  "verify_peer_name"=>false,
-              ]
-          ];
-          $response = file_get_contents("https://covid19.mathdro.id/api/countries/",
-                         false, stream_context_create($stream_opts));
-
-          $data = json_decode($response, true);
-          $i=0;
-          foreach ($data['countries'] as $val)
-            $i+=1;
-
-            for($j=0;$j<$i;$j++)
-            {
-              echo "<option value='";
-              echo $data['countries'][$j]['name'];
-              echo "'>";
-              echo $data['countries'][$j]['name'];
-              echo "</option>";
-            }
-          ?>
+        <?php include 'dropdown_country.php'; ?>
       </select>
       <br/><br/>
       <table class="table" id="tbl">
-        <thead>
-          <tr>
-            <th>States</th>
-            <th>Confirmed</th>
-            <th>Recovered</th>
-            <th>Active</th>
-            <th>Deceased</th>
-          </tr>
-        </thead>
+        
       </table>
-      <script type="text/javascript">
 
-        $( "select" ) .change(function () {
-          $country_name=document.getElementById('country').value;
-          $link ="https://covid19.mathdro.id/api/countries/"+$country_name;
-          console.log($link);
-          $.getJSON($link, function(data) {
-            document.getElementById('confirmed').innerHTML=data['confirmed']['value'];
-            document.getElementById('recovered').innerHTML=data['recovered']['value'];
-            document.getElementById('deaths').innerHTML=data['deaths']['value'];
-
-
-          });
-          $.getJSON($link+"/confirmed",function(data_confirmed){
-             $("#tbl").find("tr:gt(0)").remove();
-
-            for(var i=0;i<data_confirmed.length;i++){
-              var state=data_confirmed[i]['provinceState'];
-              if(state==null){
-                var state="";
-              }
-              var conf=data_confirmed[i]['confirmed'];
-              var recov=data_confirmed[i]['recovered'];
-              var deaths=data_confirmed[i]['deaths'];
-              var active=conf-recov-deaths;
-              $('#tbl').append('<tr><td>'+state+'</td><td>'+conf+'</td><td>'+recov+'</td><td>'+active+'</td><td>'+deaths+'</td></tr>');
-
-
-            }
-          });
-
-        });
-
-        </script>
-        <?php
-
-         ?>
-
-
-
+    <script src="function.js" type="text/javascript"></script>
   </body>
 </html>
