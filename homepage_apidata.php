@@ -5,7 +5,7 @@
           "verify_peer_name"=>false,
       ]
   ];
-  $response = file_get_contents("https://covid19.mathdro.id/api/",
+  $response = file_get_contents("https://corona-api.com/timeline",
                  false, stream_context_create($stream_opts));
 
   $data1 = json_decode($response, true);

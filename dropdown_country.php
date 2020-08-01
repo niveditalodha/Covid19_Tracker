@@ -5,20 +5,20 @@
           "verify_peer_name"=>false,
       ]
   ];
-  $response = file_get_contents("https://covid19.mathdro.id/api/countries/",
+  $response = file_get_contents("https://corona-api.com/countries",
                  false, stream_context_create($stream_opts));
 
   $data2 = json_decode($response, true);
   $i=0;
-  foreach ($data2['countries'] as $val)
+  foreach ($data2['data'] as $val)
     $i+=1;
 
     for($j=0;$j<$i;$j++)
     {
       echo "<option value='";
-      echo $data2['countries'][$j]['name'];
+      echo $j;
       echo "'>";
-      echo $data2['countries'][$j]['name'];
+      echo $data2['data'][$j]['name'];
       echo "</option>";
     }
   ?>
