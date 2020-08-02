@@ -4,7 +4,6 @@ $.getJSON($link,function(data){
   var date=new Date(date).toLocaleString("kok-IN", {timeZone: 'Asia/Kolkata'});
   document.getElementById('lastUpdated').innerHTML="Last Updated : "+date;
 });
-$('.selectpicker').selectpicker();
 $( "select" ) .change(function () {
   $country_id=document.getElementById('country').value;
   $link ="https://corona-api.com/countries";

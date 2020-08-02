@@ -15,88 +15,87 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>Covid19 World</title>
 
     <?php include 'homepage_apidata.php';?>
     </head>
-  <body style="margin-top:7%;max-width:100%;">
+  <body>
 
-    <div class="container">
-      <div class="row">
-      <div class="col-12 text-center">
-        <select id="country" class="selectpicker" data-live-search=true data-maxOptions="3" title="Select your Country" data-width="230px" data-size="5">
+    <section>
+      <div class="dropdown">
+
+        <select id="country" class="form-control selectpicker" data-live-search=true data-maxOptions="3" title="Select your Country" data-size="4">
 
           <?php include 'dropdown_country.php'; ?>
         </select>
-      </div>
+
     </div>
-      <div class="row">
-        <div class ="col-3 text-center">
-          <span>Confirmed</span>
-          <br/>
-          <span id="newConfirmed">
-            <?php
-              echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
-              echo $data1["data"][0]["new_confirmed"];
-            ?>
-          </span><br/>
-          <span id="confirmed">
-            <?php
-              echo $data1["data"][0]["confirmed"];
-            ?>
-          </span>
-        </div>
-        <div class ="col-3 text-center">
-          <span>Active</span>
-          <br/><br/>
-          <span id="active">
-            <?php
-              echo $data1["data"][0]["active"];
-             ?>
-          </span>
-        </div>
-        <div class ="col-3 text-center">
-          <span>Recovered</span>
-          <br/>
-          <span id="newRecovered">
-            <?php
-              echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
-              echo $data1["data"][0]["new_recovered"];
-            ?>
-          </span><br/>
-          <span id="recovered">
-            <?php
-              echo $data1["data"][0]["recovered"];
-             ?>
-          </span>
-        </div>
-        <div class ="col-3 text-center">
-          <span>Deceased</span>
-          <br/>
-          <span id="newDeaths">
-            <?php
-              echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
-              echo $data1["data"][0]["new_deaths"];
-            ?>
-          </span><br/>
-          <span id="deaths">
-            <?php
-              echo $data1["data"][0]["deaths"];
-             ?>
-          </span>
+      <div>
+        <div class="flex-container text-center">
+          <div class="confirmed cases">
+              <span class='case-title'>Confirmed</span>
+              <br/><br/>
+              <span id="newConfirmed" class="new-confirmed">
+                <?php
+                  echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
+                  echo $data1["data"][0]["new_confirmed"];
+                ?>
+              </span><br/>
+              <span id="confirmed" class="figure">
+                <?php
+                  echo $data1["data"][0]["confirmed"];
+                ?>
+              </span>
+          </div>
+          <div class="active cases">
+            <span class='case-title'>Active</span>
+            <br/><br/><br/>
+            <span id="active" class="figure">
+              <?php
+                echo $data1["data"][0]["active"];
+               ?>
+            </span>
+          </div>
+          <div class="recovered cases">
+            <span class='case-title'>Recovered</span>
+            <br/><br/>
+            <span id="newRecovered" class="new-recovered">
+              <?php
+                echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
+                echo $data1["data"][0]["new_recovered"];
+              ?>
+            </span><br/>
+            <span id="recovered" class="figure">
+              <?php
+                echo $data1["data"][0]["recovered"];
+               ?>
+            </span>
+          </div>
+          <div class="deaths cases">
+            <span class='case-title'>Deceased</span>
+            <br/><br/>
+            <span id="newDeaths" class="new-deaths">
+              <?php
+                echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
+                echo $data1["data"][0]["new_deaths"];
+              ?>
+            </span><br/>
+            <span id="deaths" class="figure">
+              <?php
+                echo $data1["data"][0]["deaths"];
+               ?>
+            </span>
+          </div>
         </div>
       </div>
-      <div class='row'>
-        <span id="lastUpdated" class="col-12 text-center">
-          
+      <div class="lastUpdated">
+        <span id="lastUpdated">
+
         </span>
       </div>
-    </div>
-
-
-
-
+    </section>
     <script src="function.js" type="text/javascript"></script>
   </body>
 </html>

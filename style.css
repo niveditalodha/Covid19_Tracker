@@ -1,11 +1,63 @@
-.col-12{
-  margin:0 auto;
+body{
+  font-family: 'Varela Round', sans-serif;
+  margin-top:5%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
-#country{
-  overflow: hidden;
+.dropdown{
+  width:300px;
+  justify-content: center;
   margin:0 auto;
+  padding-bottom: 50px;
 }
-.row{
-  padding-top:30px;
-  padding-bottom:30px;
+.case-title{
+  color:#A0A0A0;
+  font-size: 12px;
+}
+.lastUpdated{
+  width:300px;
+  justify-content: center;
+  margin:0 auto;
+  color: #A0A0A0;
+}
+.flex-container{
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:center;
+  margin:0 auto;
+
+}
+.new-confirmed{
+  font-size: 13px;
+  color:rgb(255,41,41);
+}
+.new-deaths{
+  font-size: 13px;
+  color:#4D4D4D;
+}
+.new-recovered{
+  font-size: 13px;
+  color:#40C22C;
+}
+.figure{
+  font-size:18px;
+  color:#343434;
+}
+.cases{
+  background-color:#F7F7F7;
+  padding:3% 2%;
+  margin:40px 1.5%;
+  border-radius:20px;
+}
+.confirmed:hover{
+  background-color:#FFF5F5;
+}
+.active:hover{
+  background-color:#CFFFF8;
+}
+.recovered:hover{
+  background-color:#BFFFBE;
+}
+.deaths:hover{
+  background-color:#d5D5D5;
 }
