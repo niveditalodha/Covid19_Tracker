@@ -31,7 +31,12 @@
           <?php include 'dropdown_country.php'; ?>
         </select>
 
-    </div>
+      </div>
+      <div class="lastUpdated">
+        <span id="lastUpdated">
+
+        </span>
+      </div>
       <div>
         <div class="flex-container text-center">
           <div class="confirmed cases">
@@ -90,11 +95,23 @@
           </div>
         </div>
       </div>
-      <div class="lastUpdated">
-        <span id="lastUpdated">
 
-        </span>
+      <div class="flex-container text-center top-padding">
+          <div id="countryHeading">
+            Global
+          </div>
+          <div id="ratios">
+            <?php
+              echo "Death Rate: ";
+              echo round($data1['data'][0]['deaths']*100/$data1['data'][0]['confirmed'],2);
+              echo "% <br/>";
+              echo "Recovery Rate: ";
+              echo round($data1['data'][0]['recovered']*100/$data1['data'][0]['confirmed'],2);
+              echo "%";
+            ?>
+          </div>
       </div>
+
     </section>
     <script src="function.js" type="text/javascript"></script>
   </body>

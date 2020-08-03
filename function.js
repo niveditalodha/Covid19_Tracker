@@ -18,5 +18,22 @@ $( "select" ) .change(function () {
     var date = data['data'][$country_id]['updated_at'];
     var date=new Date(date).toLocaleString("kok-IN", {timeZone: 'Asia/Kolkata'});
     document.getElementById('lastUpdated').innerHTML="Last Updated : "+date;
+    document.getElementById('countryHeading').innerHTML=data['data'][$country_id]['name'];
+    if(data['data'][$country_id]['latest_data']['calculated']['death_rate']==null){
+      var deathrate=0
+    }
+    else{
+      var deathrate=data['data'][$country_id]['latest_data']['calculated']['death_rate'].toFixed(2);
+    }
+    if(data['data'][$country_id]['latest_data']['calculated']['recovery_rate']==null){
+      var recoveryrate=0
+    }
+    else{
+      var recoveryrate=data['data'][$country_id]['latest_data']['calculated']['recovery_rate'].toFixed(2);
+    }
+    var change="Death Rate: "+deathrate+"%";
+    change=change+"<br/>Recovery Rate: "+recoveryrate+"%";
+    document.getElementById('ratios').innerHTML=change;
+
   });
 });

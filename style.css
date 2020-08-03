@@ -14,12 +14,6 @@ body{
   color:#A0A0A0;
   font-size: 12px;
 }
-.lastUpdated{
-  width:300px;
-  justify-content: center;
-  margin:0 auto;
-  color: #A0A0A0;
-}
 .flex-container{
   display:flex;
   flex-wrap:nowrap;
@@ -27,6 +21,31 @@ body{
   margin:0 auto;
 
 }
+#countryHeading{
+  color:#343434;
+  font-size: 30px;
+}
+#ratios{
+  text-align: left;
+  padding-left:10px;
+  padding-top:3px;
+  font-size: 11px;
+  font-style: italic;
+  color:#7A7A7A;
+}
+.lastUpdated{
+  width:240px;
+  color: #A0A0A0;
+  margin:0 auto;
+}
+#lastUpdated{
+  font-size: 13px;
+  text-align: center;
+}
+.top-padding{
+  margin-top:30px;
+}
+
 .new-confirmed{
   font-size: 13px;
   color:rgb(255,41,41);
@@ -60,4 +79,22 @@ body{
 }
 .deaths:hover{
   background-color:#d5D5D5;
+}
+@media screen and (max-width:470px){
+  .cases{
+    margin:40px 2px;
+  }
+  .figure{
+    font-size:15px;
+  }
+
+  .new-confirmed{
+    font-size: 12px;
+  }
+  .new-deaths{
+    font-size: 12px;
+  }
+  .new-recovered{
+    font-size: 12px;
+  }
 }
