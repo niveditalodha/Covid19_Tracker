@@ -34,6 +34,7 @@ $( "select" ) .change(function () {
     var change="Death Rate: "+deathrate+"%";
     change=change+"<br/>Recovery Rate: "+recoveryrate+"%";
     document.getElementById('ratios').innerHTML=change;
+    document.getElementById('perMillion').innerHTML="Cases Per Million Population: "+data['data'][$country_id]['latest_data']['calculated']['cases_per_million_population'];
 
   });
 });

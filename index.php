@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css" rel="stylesheet">
     <title>Covid19 World</title>
 
     <?php include 'homepage_apidata.php';?>
@@ -111,8 +114,21 @@
             ?>
           </div>
       </div>
+      <div id="perMillion" class="per-million">
 
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <canvas id="barchartcanvas" class="barchart"></canvas>
+          </div>
+        </div>
+      </div>
     </section>
     <script src="function.js" type="text/javascript"></script>
+    <script src="chart.js" type="text/javascript"></script>
+
+    <script src="chart_change.js" type="text/javascript"></script>
+    <link href="style.css" rel="stylesheet">
   </body>
 </html>

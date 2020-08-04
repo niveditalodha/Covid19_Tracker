@@ -43,7 +43,8 @@ body{
   text-align: center;
 }
 .top-padding{
-  margin-top:30px;
+  margin-top:10px;
+  margin-bottom:20px;
 }
 
 .new-confirmed{
@@ -79,6 +80,16 @@ body{
 }
 .deaths:hover{
   background-color:#d5D5D5;
+}
+canvas#barchartcanvas{
+  height:100px!important;
+}
+#perMillion{
+  width:100%;
+  font-size: 11px;
+  text-align: center;
+  font-style: italic;
+  color:#7A7A7A;
 }
 @media screen and (max-width:470px){
   .cases{
