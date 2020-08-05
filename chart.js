@@ -14,21 +14,21 @@ $(function(){
       {
         label:["Recovered"],
         data: [recover],
-        backgroundColor:"rgba(40,225,22,0.3)",
-        borderColor:"rgba(2,149,0,1)",
+        backgroundColor:"rgb(120,255,108,0.4)",
+        borderColor:"#292929",
         borderWidth:1,
         },{
         label:["Active"],
         data:[active],
-        backgroundColor:"rgba(22,225,222,0.3)",
-        borderColor:"rgba(0,149,140,1)",
+        backgroundColor:"rgb(180,255,233,0.4)",
+        borderColor:"#292929",
         borderWidth:1
         },
       {
         label:["Deceased"],
         data: [death],
-        backgroundColor:"rgba(79,86,86,0.3)",
-        borderColor:"rgba(63,63,63,1)",
+        backgroundColor:"rgb(149,149,149,0.4)",
+        borderColor:"#292929",
         borderWidth:1
       }
     ]
@@ -38,12 +38,39 @@ $(function(){
     responsive:true,
     maintainAspectRatio: false,
     scales: {
-      xAxes: [{ stacked: true }],
-      yAxes: [{ stacked: true, gridLines:{display:false}}]
+      xAxes: [{ stacked: true,
+
+              ticks: {
+                fontColor: "#A0A0A0",
+                beginAtZero: true,
+                userCallback: function(value, index, values) {
+                return value.toLocaleString();
+            }
+              }
+            }],
+      yAxes: [{ stacked: true,
+                gridLines:{
+                  display:false
+                },
+                ticks: {
+                  fontColor: "#A0A0A0",
+                },
+              }]
     },
     tooltips: {
-            mode: 'point'
-        }
+            mode: 'point',
+            callbacks: {
+              label: function (tooltipItem, data) {
+                var tooltipValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                return parseInt(tooltipValue).toLocaleString();
+              }
+            }
+          },
+    legend: {
+      labels: {
+         fontColor: '#A0A0A0'
+      }
+   },
   }
 });
 });

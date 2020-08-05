@@ -3,6 +3,7 @@ body{
   margin-top:5%;
   max-width: 100%;
   overflow-x: hidden;
+  background-color: #4D4D4D;
 }
 .dropdown{
   width:300px;
@@ -10,8 +11,24 @@ body{
   margin:0 auto;
   padding-bottom: 50px;
 }
+.btn{
+  background-color: rgba(149,149,149,0.6);
+}
+.bootstrap-select.btngroup .dropdown-menu li a{
+
+}
+.bootstrap-select.btn-group .dropdown-menu{
+  background-color:rgba(149,149,149,0.7);
+}
+.bs-searchbox .form-control{
+  background-color:rgba(119,119,119,0.7);
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  background-color:rgba(119,119,119,0.7);
+
+}
 .case-title{
-  color:#A0A0A0;
+  color:#262626;
   font-size: 12px;
 }
 .flex-container{
@@ -22,7 +39,7 @@ body{
 
 }
 #countryHeading{
-  color:#343434;
+  color:#262626;
   font-size: 30px;
 }
 #ratios{
@@ -31,10 +48,10 @@ body{
   padding-top:3px;
   font-size: 11px;
   font-style: italic;
-  color:#7A7A7A;
+  color:#A0A0A0;
 }
 .lastUpdated{
-  width:240px;
+  width:250px;
   color: #A0A0A0;
   margin:0 auto;
 }
@@ -49,37 +66,36 @@ body{
 
 .new-confirmed{
   font-size: 13px;
-  color:rgb(255,41,41);
+  color:#C10000;
 }
 .new-deaths{
   font-size: 13px;
-  color:#4D4D4D;
+  color:#252525;
 }
 .new-recovered{
   font-size: 13px;
-  color:#40C22C;
+  color:#00E30B;
 }
 .figure{
   font-size:18px;
-  color:#343434;
+  color:#262626;
 }
 .cases{
-  background-color:#F7F7F7;
   padding:3% 2%;
   margin:40px 1.5%;
   border-radius:20px;
 }
-.confirmed:hover{
-  background-color:#FFF5F5;
+.confirmed{
+  background-color:rgb(255,108,108,0.4);
 }
-.active:hover{
-  background-color:#CFFFF8;
+.active{
+  background-color:rgb(180,255,233,0.4);
 }
-.recovered:hover{
-  background-color:#BFFFBE;
+.recovered{
+  background-color:rgb(120,255,108,0.4);
 }
-.deaths:hover{
-  background-color:#d5D5D5;
+.deaths{
+  background-color:rgb(149,149,149,0.4);
 }
 canvas#barchartcanvas{
   height:100px!important;
@@ -89,14 +105,14 @@ canvas#barchartcanvas{
   font-size: 11px;
   text-align: center;
   font-style: italic;
-  color:#7A7A7A;
+  color:#A0A0A0;
 }
 @media screen and (max-width:470px){
   .cases{
-    margin:40px 2px;
+    margin:40px 1px;
   }
   .figure{
-    font-size:15px;
+    font-size:14px;
   }
 
   .new-confirmed{

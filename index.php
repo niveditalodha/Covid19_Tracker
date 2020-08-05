@@ -48,12 +48,12 @@
               <span id="newConfirmed" class="new-confirmed">
                 <?php
                   echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
-                  echo $data1["data"][0]["new_confirmed"];
+                  echo number_format($data1["data"][0]["new_confirmed"]);
                 ?>
               </span><br/>
               <span id="confirmed" class="figure">
                 <?php
-                  echo $data1["data"][0]["confirmed"];
+                  echo number_format($data1["data"][0]["confirmed"]);
                 ?>
               </span>
           </div>
@@ -62,7 +62,7 @@
             <br/><br/><br/>
             <span id="active" class="figure">
               <?php
-                echo $data1["data"][0]["active"];
+                echo number_format($data1["data"][0]["active"]);
                ?>
             </span>
           </div>
@@ -72,12 +72,12 @@
             <span id="newRecovered" class="new-recovered">
               <?php
                 echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
-                echo $data1["data"][0]["new_recovered"];
+                echo number_format($data1["data"][0]["new_recovered"]);
               ?>
             </span><br/>
             <span id="recovered" class="figure">
               <?php
-                echo $data1["data"][0]["recovered"];
+                echo number_format($data1["data"][0]["recovered"]);
                ?>
             </span>
           </div>
@@ -87,12 +87,12 @@
             <span id="newDeaths" class="new-deaths">
               <?php
                 echo '<i class="fa fa-arrow-up" aria-hidden="true"></i> ';
-                echo $data1["data"][0]["new_deaths"];
+                echo number_format($data1["data"][0]["new_deaths"]);
               ?>
             </span><br/>
             <span id="deaths" class="figure">
               <?php
-                echo $data1["data"][0]["deaths"];
+                echo number_format($data1["data"][0]["deaths"]);
                ?>
             </span>
           </div>
@@ -114,7 +114,7 @@
             ?>
           </div>
       </div>
-      <div id="perMillion" class="per-million">
+      <div id="perMillion">
 
       </div>
       <div class="container">
