@@ -5,10 +5,11 @@ $( "select" ).change(function () {
   $country_id=document.getElementById('country').value;
   $link ="https://corona-api.com/countries";
   $.getJSON($link, function(data) {
+    var confirm=data['data'][$country_id]['latest_data']['confirmed'];
     var recover= data['data'][$country_id]['latest_data']['recovered'];
     var active=data['data'][$country_id]['latest_data']['confirmed']-data['data'][$country_id]['latest_data']['recovered']-data['data'][$country_id]['latest_data']['deaths'];
     var death=data['data'][$country_id]['latest_data']['deaths'];
-    if(recover!=0){
+    if(confirm!=0){
     var ctx = document.getElementById('barchartcanvas');
     var chart = new Chart(ctx, {
       type: 'horizontalBar',
