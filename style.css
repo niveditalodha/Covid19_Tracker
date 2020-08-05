@@ -107,6 +107,21 @@ canvas#barchartcanvas{
   font-style: italic;
   color:#A0A0A0;
 }
+hr{
+  height:1px;
+  width:75%;
+  border:none;
+  border-color:rgba(41,41,41,0.7);
+  background-color: rgba(41,41,41,0.7);
+
+}
+.copyright{
+  font-size:11px;
+  margin-top: 20px;
+  margin-left: 10%;
+  font-style: italic;
+  color:#A0A0A0;
+}
 @media screen and (max-width:470px){
   .cases{
     margin:40px 1px;

@@ -124,6 +124,10 @@
           </div>
         </div>
       </div>
+      <hr>
+      <div class="copyright">
+        Developed by Nivedita Lodha
+      </div>
     </section>
     <script src="function.js" type="text/javascript"></script>
     <script src="chart.js" type="text/javascript"></script>
