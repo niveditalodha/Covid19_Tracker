@@ -14,11 +14,12 @@ body{
 .btn{
   background-color: rgba(149,149,149,0.6);
 }
-.bootstrap-select.btngroup .dropdown-menu li a{
-
+.dropdown-menu{
+  width: -webkit-fill-available;
 }
 .bootstrap-select.btn-group .dropdown-menu{
   background-color:rgba(149,149,149,0.7);
+  overflow-x: hidden;
 }
 .bs-searchbox .form-control{
   background-color:rgba(119,119,119,0.7);
@@ -117,10 +118,22 @@ hr{
 }
 .copyright{
   font-size:11px;
-  margin-top: 20px;
-  margin-left: 10%;
+  margin-top:-5px;
+  margin-left: 15%;
   font-style: italic;
   color:#A0A0A0;
+}
+.caret{
+  display: none;
+}
+.bootstrap-select .dropdown-toggle:focus{
+  outline: 0px!important;
+}
+a:focus{
+  outline: 0px!important;
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+  background-color: #252521;
 }
 @media screen and (max-width:470px){
   .cases{
